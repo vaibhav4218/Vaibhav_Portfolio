@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gradient-start: #4169e1;
+  --gradient-end: #ff69b4;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+  @apply flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors;
+}
+
+.nav-link.active {
+  @apply text-white bg-white/10 rounded-lg;
+}
+
+.section-title {
+  @apply text-4xl font-bold mb-8 gradient-text;
+}
+
+.card {
+  @apply bg-white/5 rounded-xl p-6 backdrop-blur-sm;
+}
+
+/* Add particle animation background */
+.bg-\[\#1F1B2C\] {
+  background-image: radial-gradient(circle at center, rgba(65, 105, 225, 0.1) 0%, transparent 8%),
+    radial-gradient(circle at 80% 20%, rgba(255, 105, 180, 0.1) 0%, transparent 8%);
+  background-size: 24px 24px, 32px 32px;
+  animation: particleFloat 20s linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    background-position: 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, 100% 100%;
+  }
+}
+
